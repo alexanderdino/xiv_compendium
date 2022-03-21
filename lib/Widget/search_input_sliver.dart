@@ -25,7 +25,7 @@ class _SearchInputSliverState extends State<SearchInputSliver> {
         .listen((text) {
       if (_debounce?.isActive ?? false) _debounce?.cancel();
 
-      _debounce = Timer(const Duration(milliseconds: 1000), () {
+      _debounce = Timer(const Duration(milliseconds: 500), () {
         final onChanged = widget.onChanged;
         if (onChanged != null) {
           onChanged(text);

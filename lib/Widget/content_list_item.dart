@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xiv_compendium/constants.dart';
 
 class ContentListItem extends StatelessWidget {
   const ContentListItem({
@@ -22,9 +23,9 @@ class ContentListItem extends StatelessWidget {
 
     final String imageUrl;
     if (iconPath.isNotEmpty) {
-      imageUrl = 'https://xivapi.com/$iconPath';
+      imageUrl = '$baseUrl$iconPath';
     } else {
-      imageUrl = 'https://xivapi.com/img-misc/chat_messengericon_dutyroulette.png';
+      imageUrl = '$baseUrl/img-misc/chat_messengericon_dutyroulette.png';
     }
 
     contents.add(

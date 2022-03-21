@@ -8,6 +8,7 @@ import 'package:xiv_compendium/ObjectModel/game_content.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:xiv_compendium/Widget/search_input_sliver.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:xiv_compendium/constants.dart';
 
 class ContentListPage extends StatefulWidget {
   const ContentListPage({Key? key, required this.title}) : super(key: key);
@@ -54,7 +55,7 @@ class _ContentListPageState extends State<ContentListPage> {
   }
 
   Future<GameContentData> fetchData(int pageKey) async {
-    String url = "https://xivapi.com/search?indexes=item&page=$pageKey";
+    String url = "${baseUrl}search?indexes=item&page=$pageKey";
     if (_searchTerm != null) {
       url += "&string=$_searchTerm";
     }
