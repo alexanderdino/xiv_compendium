@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:xiv_compendium/Page/content_list_page.dart';
 
 void main() {

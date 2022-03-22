@@ -21,26 +21,29 @@ class ContentListItem extends StatelessWidget {
 
     List<Widget> contents = [];
 
-    final String imageUrl;
-    if (iconPath.isNotEmpty) {
-      imageUrl = '$baseUrl$iconPath';
-    } else {
-      imageUrl = '$baseUrl/img-misc/chat_messengericon_dutyroulette.png';
-    }
+    final String imageUrl = '$baseUrl$iconPath';
 
     contents.add(
         Image.network(
           imageUrl,
           height: 24,
+          errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+            return const SizedBox.shrink();
+          },
         )
     );
     contents.add(Container(width: 8));
-    contents.add(Expanded(child: Text(name)));
+    contents.add(
+        Expanded(
+            child: Text(name, textDirection: TextDirection.ltr,)
+        )
+    );
 
     return GestureDetector(
       child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
           child: Row(
+            textDirection: TextDirection.ltr,
             children: contents,
           )
       ),

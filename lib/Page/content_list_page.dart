@@ -84,13 +84,6 @@ class _ContentListPageState extends State<ContentListPage> {
           ],
         )
     );
-
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: _createCustomScrollView()
-    );
   }
 
   CustomScrollView _createCustomScrollView() {

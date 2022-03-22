@@ -21,7 +21,7 @@ class _ContentDetailPageState extends State<ContentDetailPage> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text('${widget.title}'),
+        middle: Text(widget.title),
       ),
       child: _detailBuilder(),
     );
